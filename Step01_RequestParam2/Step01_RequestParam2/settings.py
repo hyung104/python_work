@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'memberApp', 
     'pageTestApp',
     'noticeApp',
+    'blogApp',
 ]
 
 MIDDLEWARE_CLASSES = [

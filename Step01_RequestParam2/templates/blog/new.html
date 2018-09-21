@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>blog/new.html</title>
+</head>
+<body>
+<h3>새글 작성 폼</h3>
+<form action="{% url 'blog_new' %}" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">저장</button>
+</form>
+</body>
+</html>

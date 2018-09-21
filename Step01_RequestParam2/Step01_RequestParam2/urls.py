@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^member/', include('memberApp.urls')),
     url(r'^pages/', include('pageTestApp.urls')),
     url(r'^notice/', include('noticeApp.urls')),
+    url(r'^blog/', include('blogApp.urls')),
 ]
