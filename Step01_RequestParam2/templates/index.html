@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>templates/index.html</title>
+<link rel="stylesheet" href="/static/css/bootstrap.css" />
+</head>
+<body>
+<div class="container">
+	<h3>인덱스 페이지 입니다.</h3>
+	<ul>
+		<li><a href="/fortune/">오늘의 운세 보기</a></li>
+		<li><a href="/detail?num=1">자세히 보기</a></li>
+		<li><a href="/detail/?num=1">자세히 보기2</a></li>
+		<li><a href="/memo/hello/">memo hello 요청</a></li> <!-- memo/urls.py 에 정보 있어야함 -->
+		<li><a href="/memo/list/">memo 목록 보기</a></li>
+		<li><a href="/member/list/">회원 목록 보기</a></li>
+		<li><a href="/pages/">page 테스트</a></li>
+		<li><a href="{% url 'home' %}">page 테스트</a></li>
+		<li><a href="{% url 'about' %}">page 테스트 about</a></li>
+		<li><a href="{% url 'contact' %}">page 테스트 contact</a></li>
+		<li><a href="{% url 'noticeHome' %}">오늘의 공지사항</a></li>
+	</ul>
+	<p>csrf_token: <strong>{{csrf_token}}</strong></p>
+	<form action="/login/" method="post">
+		<!--<input type="hidden" name='csrfmiddlewaretoken' value='{{csrf_token}}'/> -->
+		{% csrf_token %}
+		<label for="id">아이디</label>
+		<input type="text" id="id" name="id"/>
+		<label for="pwd">비밀번호</label>
+		<input type="password" id="pwd" name="pwd"/>
+		<button type="submit">로그인</button>
+	</form>
+	
+	<!-- 
+	html 소스 보기 한 결과
+	<form action="/login/" method="post">
+		<input type='hidden' name='csrfmiddlewaretoken' value='a9wT74e7m9E5FWa0JdiUMvy2O8Vu8IJF' />
+		<label for="id">아이디</label>
+		<input type="text" id="id" name="id"/>
+		<label for="pwd">비밀번호</label>
+		<input type="password" id="pwd" name="pwd"/>
+		<button type="submit">로그인</button>
+	</form>	
+	 -->
+</div>
+</body>
+</html>
+

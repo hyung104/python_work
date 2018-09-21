@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>member/list.html</title>
+<link rel="stylesheet" href="/static/css/bootstrap.css" />
+</head>
+<body>
+<div class="container">
+	<a class="btn btn-primary" 
+		href="/member/insertform/">회원 정보 추가</a>
+	<h3>회원 목록 입니다.</h3>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>주소</th>
+				<th>수정</th>
+				<th>삭제</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for tmp in memberList %}
+			<tr>
+				<td>{{tmp.num}}</td>
+				<td>{{tmp.name}}</td>
+				<td>{{tmp.addr}}</td>
+				<td><a href="/member/updateform/?num={{tmp.num}}">수정</a></td>
+				<td><a href="/member/delete/?num={{tmp.num}}">삭제</a></td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
