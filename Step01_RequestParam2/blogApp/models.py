@@ -26,4 +26,3 @@ class Blog(models.Model):
     # 새글 추가한 후 글 자세기 보기로 Redirect 시키기 위한 설정
     def get_absolute_url(self):
         return reverse('blog_detail', args=[self.id])
-       
